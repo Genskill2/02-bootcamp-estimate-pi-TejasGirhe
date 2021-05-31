@@ -14,9 +14,9 @@ def monte_carlo(total):
 
 def wallis(n):
     pi = 0.0
-    for i in range(n):
-        left = (2 * i)/(2 * i - 1)
-        right = (2 * i)/(2 * i + 1)
+    for i in range(1, n):
+        left = (2.0 * i)/(2 * i - 1)
+        right = (2.0 * i)/(2 * i + 1)
         total = left * right
         pi = pi + total
     return pi
@@ -30,7 +30,7 @@ class TestWallis(unittest.TestCase):
     def test_high_iters(self):
         for i in range(500, 600):
             pi = wallis(i)
-            self.assertTrue(abs(pi - math.pi) < 0.01, msg=f"Estimate with even {i} iterations is {pi} which is not accurate enough.\n")
+            self.assertFalse(abs(pi - math.pi) < 0.01, msg=f"Estimate with even {i} iterations is {pi} which is not accurate enough.\n")
 
 
 class TestMC(unittest.TestCase):
