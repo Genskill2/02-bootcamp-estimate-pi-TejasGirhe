@@ -3,9 +3,8 @@ import unittest
 
 import random as random
 
-def monte_carlo():
+def monte_carlo(total):
     inside = 0
-    total = 1000
     for i in range(0, total):
         x2 = random.random()**2
         y2 = random.random()**2
