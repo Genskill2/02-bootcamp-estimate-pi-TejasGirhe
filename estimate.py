@@ -30,7 +30,7 @@ class TestWallis(unittest.TestCase):
     def test_high_iters(self):
         for i in range(500, 600):
             pi = wallis(i)
-            self.assertFalse(abs(pi - math.pi) < 0.01, msg=f"Estimate with even {i} iterations is {pi} which is not accurate enough.\n")
+            self.assertTrue(abs(pi - math.pi) < 0.01, msg=f"Estimate with even {i} iterations is {pi} which is not accurate enough.\n")
 
 
 class TestMC(unittest.TestCase):
